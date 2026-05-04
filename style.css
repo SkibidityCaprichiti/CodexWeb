@@ -1,0 +1,233 @@
+/* ==============================
+   Estilos globales y variables
+   ============================== */
+:root {
+  --bg: #f7f8fa;
+  --surface: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --primary: #0f766e;
+  --primary-dark: #0b5b56;
+  --accent: #25d366;
+  --shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  --radius: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+}
+
+h1, h2, h3 {
+  line-height: 1.2;
+}
+
+/* ==============================
+   Cabecera
+   ============================== */
+.hero-header {
+  background: linear-gradient(135deg, #0f766e, #155e75);
+  color: #fff;
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.hero-header p {
+  margin: 0.75rem 0 0;
+  color: #d7f4ef;
+}
+
+/* ==============================
+   Foto principal
+   ============================== */
+.hero-image img {
+  width: 100%;
+  height: min(65vh, 560px);
+  object-fit: cover;
+}
+
+/* ==============================
+   Secciones generales
+   ============================== */
+section {
+  margin: 2.5rem auto;
+}
+
+.features-grid,
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.feature-card,
+.reviews blockquote {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.1rem;
+}
+
+.feature-card p {
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
+/* ==============================
+   Mapa
+   ============================== */
+.map-frame {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.map-frame iframe {
+  width: 100%;
+  min-height: 350px;
+  border: 0;
+}
+
+/* ==============================
+   Galería
+   ============================== */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.gallery-grid img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+/* ==============================
+   Reseñas
+   ============================== */
+.reviews blockquote {
+  margin: 0;
+  font-style: italic;
+}
+
+.reviews cite {
+  margin-top: 0.75rem;
+  display: block;
+  color: var(--muted);
+  font-style: normal;
+}
+
+/* ==============================
+   Botones de acción
+   ============================== */
+.actions {
+  text-align: center;
+}
+
+.actions-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 0.85rem 1.25rem;
+  border-radius: 999px;
+  font-weight: 600;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.95;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+}
+
+.btn-whatsapp {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* ==============================
+   Pie de página
+   ============================== */
+.site-footer {
+  background: #0b1220;
+  padding: 1.25rem 0;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: #d1d5db;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
+
+/* ==============================
+   Responsive: tablet
+   ============================== */
+@media (max-width: 900px) {
+  .features-grid,
+  .reviews-grid,
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ==============================
+   Responsive: móvil
+   ============================== */
+@media (max-width: 600px) {
+  .hero-header {
+    padding: 2rem 0;
+  }
+
+  .features-grid,
+  .reviews-grid,
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .map-frame iframe {
+    min-height: 280px;
+  }
+}
